@@ -11,6 +11,8 @@ import (
 	"os"
 	"os/exec"
 	"path"
+
+	"github.com/miquella/vaulted/lib"
 )
 
 var (
@@ -36,7 +38,7 @@ type Help struct {
 	Subcommand string
 }
 
-func (h *Help) Run(steward Steward) error {
+func (h *Help) Run(store vaulted.Store) error {
 	return displayHelp(h.Subcommand)
 }
 
